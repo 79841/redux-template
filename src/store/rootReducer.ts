@@ -11,7 +11,7 @@ export const reducer = {
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["categoryList"],
+  // whitelist: ["categoryList"],
 };
 
 export const persistedReducer = persistReducer(
