@@ -1,5 +1,4 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { reducer } from "./rootReducer";
+import { configureStore } from "@reduxjs/toolkit";
 
 import {
   FLUSH,
@@ -8,21 +7,9 @@ import {
   PURGE,
   REGISTER,
   REHYDRATE,
-  persistReducer,
   persistStore,
 } from "redux-persist";
-import { storage } from "./storage";
-
-const persistConfig = {
-  key: "root",
-  storage,
-  whitelist: ["categoryList"],
-};
-
-const persistedReducer = persistReducer(
-  persistConfig,
-  combineReducers(reducer)
-);
+import { persistedReducer } from "./rootReducer";
 
 export const reduxStore = configureStore({
   reducer: persistedReducer,
