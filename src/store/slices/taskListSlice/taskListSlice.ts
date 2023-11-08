@@ -29,4 +29,6 @@ export const taskListSlice = createSlice({
   },
 });
 
+export const taskListActions = taskListSlice.actions;
+
 export type TaskListSliceState = TTask[];

@@ -1,4 +1,4 @@
-import { taskListSlice } from "@/store";
+import { taskListActions } from "@/store";
 import type { Task as TTask } from "@/types/Task";
 import { useDispatch } from "react-redux";
 
@@ -9,11 +9,11 @@ const Task = ({ task }: TaskProps) => {
   const dispatch = useDispatch();
 
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-    dispatch(taskListSlice.actions.delete(task.name));
+    dispatch(taskListActions.delete(task.name));
   };
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    dispatch(taskListSlice.actions.switchState(task.name));
+    dispatch(taskListActions.switchState(task.name));
   };
 
   return (

@@ -1,4 +1,4 @@
-import { categoryListSlice } from "@/store";
+import { categoryListActions } from "@/store";
 import type { Category as TCategory } from "@/types/Category";
 import { useDispatch } from "react-redux";
 
@@ -9,7 +9,7 @@ type CategoryProps = {
 const Category = ({ category }: CategoryProps) => {
   const dispatch = useDispatch();
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-    dispatch(categoryListSlice.actions.delete(category.name));
+    dispatch(categoryListActions.delete(category.name));
   };
   return (
     <li>

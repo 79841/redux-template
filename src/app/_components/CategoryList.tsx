@@ -1,6 +1,6 @@
 "use client";
 
-import { categoryListSlice, selectCategoryList } from "@/store";
+import { categoryListActions, selectCategoryList } from "@/store";
 import { useDispatch, useSelector } from "react-redux";
 import Category from "../../components/Category";
 import { useState } from "react";
@@ -17,7 +17,7 @@ const CategoryList = () => {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    dispatch(categoryListSlice.actions.add({ name: newCategory }));
+    dispatch(categoryListActions.add({ name: newCategory }));
   };
 
   return (

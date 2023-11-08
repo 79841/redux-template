@@ -19,4 +19,6 @@ export const categoryListSlice = createSlice({
   },
 });
 
+export const categoryListActions = categoryListSlice.actions;
+
 export type CategoryListSliceState = TCategory[];

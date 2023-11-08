@@ -1,7 +1,7 @@
 "use client";
 import type { Task as TTask } from "@/types/Task";
 import Task from "@/components/Task";
-import { selectCategoryList, selectTaskList, taskListSlice } from "@/store";
+import { selectCategoryList, selectTaskList, taskListActions } from "@/store";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
@@ -24,7 +24,7 @@ const TaskList = () => {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     dispatch(
-      taskListSlice.actions.add({ ...newTask, date: new Date().toDateString() })
+      taskListActions.add({ ...newTask, date: new Date().toDateString() })
     );
   };
 
