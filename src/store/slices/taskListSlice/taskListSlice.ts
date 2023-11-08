@@ -17,10 +17,10 @@ export const taskListSlice = createSlice({
     },
     switchState: (state, action: PayloadAction<string>) => {
       return state.map((task) => {
-        if (task.name === action.payload) {
-          task.done = !task.done;
-        }
-        return task;
+        return {
+          ...task,
+          done: task.name === action.payload ? !task.done : task.done,
+        };
       });
     },
     delete: (state, action: PayloadAction<string>) => {
