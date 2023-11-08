@@ -1,7 +1,3 @@
-import {configureStore} from '@reduxjs/toolkit'
-
-
-
-export const reduxStore = configureStore({
-    
-})
+export * from "./store";
+export * from "./slices";
+export * from "./providers";

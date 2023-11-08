@@ -1,1 +1,2 @@
-export * from "./taskListSlice"
+export * from "./taskListSlice";
+export * from "./selectors";
